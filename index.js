@@ -1,50 +1,28 @@
 var nInscritos = 5
-var inscritos=[{
-nome:"Kratos",
-poder: 70,
-kill:12,
-death:2
-},
-{
-  nome: "Goku",
-  poder: 80,
-  kill: 0,
-  death:3
-},
-{
-  nome: "Kuririn",
-  poder: 15,
-  kill: 0,
-  death:4
-},
-{
-  nome: "Saitama",
-  poder: 100,
-  kill: 0,
-  death:0
-},
-{
-   nome:"Hulk",
-   poder: 90,
-   kill:0,
-   death:0
-}]
-var melhorPersonagem= inscritos[0]
-for (const i in inscritos) {
-   if(inscritos[i].poder + inscritos[i].kill - inscritos[i].death > melhorPersonagem.poder + melhorPersonagem.kill - melhorPersonagem.death ){
-       melhorPersonagem= inscritos[i]
-       
-   }else if(inscritos[i].poder + inscritos[i].kill - inscritos[i].death === melhorPersonagem.poder + melhorPersonagem.kill - melhorPersonagem.death){
-    if(inscritos[i].kill > melhorPersonagem.kill){
-      melhorPersonagem=inscritos[i]
-    }else if (inscritos[i].kill === melhorPersonagem.kill){
-      if(inscritos[i].death< melhorPersonagem.death ){
-             melhorPersonagem=inscritos[i]
-      }else if(inscritos[i].death === melhorPersonagem.death){
-       melhorPersonagem="Godofor"
+var inscritos=["Kratos","Goku","Kuririn","Saitama","Hulk"]
+var poder=[70,80,15,100,90]
+var kill=[12,0,0,0,0]
+var death=[2,3,4,0,0]
+var god = inscritos[0]
+var melhorPersonagem=[ inscritos[0] ,poder [0],kill [0],death[0]]
+for (var i in inscritos,poder, kill,death) {
+   if(poder[i] + kill[i] - death[i] > melhorPersonagem[1] + melhorPersonagem[2] - melhorPersonagem[3] ){
+       melhorPersonagem= [ inscritos[i] ,poder [i],kill [i],death[i]]
+   }else if(poder[i] + kill[i] - death[i] == melhorPersonagem[1] + melhorPersonagem[2] - melhorPersonagem[3]){
+    if(kill[i] > melhorPersonagem[2]){
+      melhorPersonagem= [ inscritos[i] ,poder [i],kill [i],death[i]]
+    }else if ((kill[i] == melhorPersonagem[2])){
+      if(kill[i] < melhorPersonagem[3]){
+             melhorPersonagem=[ inscritos[i] ,poder [i],kill [i],death[i]]
+      }else if(kill[i] == melhorPersonagem[3]){
+       for(var i in inscritos){
+           if(inscritos[i].length< god.length){
+               melhorPersonagem= [ inscritos[i] ,poder [i],kill [i],death[i]]
+           }
+       }
    }
-    }
-}
-console.log(melhorPersonagem )
 }
 
+}
+}
+console.log(melhorPersonagem[0])
